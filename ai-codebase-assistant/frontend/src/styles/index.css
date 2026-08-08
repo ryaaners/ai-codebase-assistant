@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/*
+  Design direction: a "cockpit for a codebase" rather than a marketing
+  page -- dark, IDE-adjacent, monospace-forward where code/paths/signatures
+  appear, generous negative space elsewhere. Teal is the single accent
+  (search, links, active states); amber and coral are reserved for
+  complexity/security signal so they read as meaningful, not decorative.
+*/
+@theme {
+  --color-bg: #0b0d10;
+  --color-surface: #12151a;
+  --color-surface-hover: #171b21;
+  --color-surface-raised: #1a1e25;
+  --color-border: #242a33;
+  --color-border-soft: #1a1f26;
+
+  --color-text: #e8eaed;
+  --color-text-muted: #8b93a1;
+  --color-text-faint: #565e6b;
+
+  --color-accent: #2dd4bf;
+  --color-accent-soft: #0f3733;
+  --color-accent-text: #5eead4;
+
+  --color-warn: #f5a623;
+  --color-warn-soft: #3a2a0f;
+  --color-danger: #f2735c;
+  --color-danger-soft: #3a1e18;
+
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-text);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes pulse-node {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.animate-pulse-node {
+  animation: pulse-node 2.4s ease-in-out infinite;
+}
+
+@keyframes draw-edge {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.animate-draw-edge {
+  stroke-dasharray: 4 3;
+  animation: draw-edge 1.2s linear infinite;
+}

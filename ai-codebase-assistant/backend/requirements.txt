@@ -1,0 +1,47 @@
+# Web framework
+fastapi==0.141.1
+uvicorn[standard]==0.52.1
+pydantic==2.13.4
+pydantic-settings==2.14.2
+python-multipart==0.0.32
+
+# Relational storage (SQLite locally, Postgres via docker-compose)
+sqlalchemy==2.0.51
+aiosqlite==0.22.1
+asyncpg==0.31.0
+psycopg2-binary==2.9.12
+
+# Vector storage (pgvector backend)
+pgvector==0.5.0
+
+# Graph storage
+networkx==3.6.1
+neo4j==6.2.0
+
+# Background jobs
+redis==8.1.0
+celery==5.6.3
+
+# Static analysis
+tree-sitter==0.26.0
+tree-sitter-python==0.25.0
+tree-sitter-javascript==0.25.0
+tree-sitter-typescript==0.23.2
+bandit==1.9.4
+
+# Ingestion
+GitPython==3.1.58
+
+# Embeddings / numerics
+numpy==2.4.4
+
+# LLM
+anthropic==0.120.2
+httpx==0.28.1
+
+# misc
+aiofiles==25.1.0
+
+# Tests
+pytest==9.1.1
+pytest-asyncio==1.4.0
